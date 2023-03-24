@@ -3,3 +3,4 @@ Inside SpringBoot, SpringMVC, Spring Data JPA, Spring Security, Hibernate with P
 JSP and Maven for dependency management. </p>
 
 ##Features
+Hibernate
