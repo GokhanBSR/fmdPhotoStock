@@ -4,3 +4,4 @@ JSP and Maven for dependency management. </p>
 
 ##Features
 Hibernate
+Maven
