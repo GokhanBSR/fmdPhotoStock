@@ -1,8 +1,8 @@
-package com.bilgeadam.photo.service;
+package com.bilgeadam.photo.common.service;
 
 import java.util.List;
 
-public interface BaseService<T, ID> {
+public interface BaseServiceInterface<T, ID> {
 
     T save(T entity);
 

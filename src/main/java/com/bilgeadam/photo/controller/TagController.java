@@ -1,6 +1,7 @@
 package com.bilgeadam.photo.controller;
 
 
+import com.bilgeadam.photo.common.controller.BaseController;
 import com.bilgeadam.photo.dto.TagDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

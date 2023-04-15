@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.bilgeadam.photo</groupId>
 	<artifactId>fmdStockPhoto</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.6-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>fmdStockPhoto</name>
 	<description>stock photo project for fmd. this programme make your picture to value</description>

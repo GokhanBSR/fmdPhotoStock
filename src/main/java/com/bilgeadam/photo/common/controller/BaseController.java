@@ -1,4 +1,4 @@
-package com.bilgeadam.photo.controller;
+package com.bilgeadam.photo.common.controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
