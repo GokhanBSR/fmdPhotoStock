@@ -1,11 +1,7 @@
 package com.bilgeadam.photo.model;
 import com.bilgeadam.photo.common.entity.BaseEntity;
 import com.bilgeadam.photo.consts.EntityConstants;
-import com.bilgeadam.photo.consts.MessageConstants;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +9,10 @@ import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
+import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
@@ -36,13 +36,13 @@ public class User extends BaseEntity {
      * users password info
      */
     @NotBlank
-    @Size (min = 8)
+    @Size(min = 8)
     @Column(name = "password", nullable = false)
     private double password;
 
     @Transient
     @Size (min = 8)
-    private double cpassword;
+    private double confPassword;
 
     @Email
     @NotBlank
@@ -59,6 +59,9 @@ public class User extends BaseEntity {
 
     @Column (name = "status")
     private boolean isEnable = true;
+
+    @Column (name = "payment")
+    private int payment;
 
 //    @OneToMany (cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //    @JoinColumn (name = "user_id")

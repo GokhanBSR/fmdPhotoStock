@@ -1,27 +1,23 @@
 package com.bilgeadam.photo.dto;
 
-
 import com.bilgeadam.photo.common.dto.BaseDto;
-import com.bilgeadam.photo.consts.MessageConstants;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.*;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.Set;
-import java.util.UUID;
 
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-
 public class PhotoDto extends BaseDto {
 
-    @NotBlank
-    private UUID userId;
+//    @NotBlank
+//    private UUID userId;
 
     /**
      * photo category dto
@@ -33,13 +29,14 @@ public class PhotoDto extends BaseDto {
      * photo title dto
      */
     @NotBlank
-    @Size (min = 2)
+    @Size(min = 2)
     private String title;
 
     /**
      * photo desc dto
      */
     @NotBlank
+    @Size (min = 2)
         private String description;
 
     /**
@@ -54,13 +51,13 @@ public class PhotoDto extends BaseDto {
      * relations between tags and photos
      */
     @NotBlank
-        private Set<TagDto> tagDtoSet;
+        private Set<TagDto> tagDtos;
 
     /**
      * relations between photos and user
      */
     @NotBlank
-    private Set<UserDto> userDtoSet;
+    private Set<UserDto> userDtos;
 
 
     }

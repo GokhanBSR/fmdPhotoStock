@@ -1,16 +1,24 @@
 package com.bilgeadam.photo.common.service;
 
+import com.bilgeadam.photo.common.dto.BaseDto;
+
 import java.util.List;
+import java.util.UUID;
 
-public interface BaseServiceInterface<T, ID> {
+public interface BaseServiceInterface<DtoType extends BaseDto> {
+    DtoType save (DtoType dtoType);
+    List<DtoType> saveAll(List<DtoType> dtoType);
 
-    T save(T entity);
+    List<DtoType> saveAll (List<DtoType>dtoType);
 
-    T update(ID id, T entity);
+    List<DtoType> findAll();
 
-    void delete(ID id);
+    DtoType findById(UUID uuid);
 
-    T findById(ID id);
+    void deleteById(UUID uuid);
 
-    List<T> findAll();
+    void delete (DtoType dtoType);
+
+    void deleteAll (List<DtoType>dtoTypes);
+
 }

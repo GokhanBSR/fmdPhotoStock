@@ -11,6 +11,7 @@ import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -32,8 +33,8 @@ public class Tag extends BaseEntity {
     /**
      * tag column setted to photo column
      */
-    @ManyToMany (cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    @JoinColumn (name= "photo_id")
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn (name= "photo_id")
     private Set<Photo>photo;
 
 }

@@ -3,7 +3,6 @@ package com.bilgeadam.photo.repository;
 
 import com.bilgeadam.photo.common.repository.BaseRepository;
 import com.bilgeadam.photo.model.Photo;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

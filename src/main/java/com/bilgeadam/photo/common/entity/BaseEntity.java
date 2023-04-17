@@ -1,8 +1,6 @@
 package com.bilgeadam.photo.common.entity;
 
 import com.bilgeadam.photo.consts.EntityConstants;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +11,8 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -26,6 +26,9 @@ import java.util.UUID;
 @Where(clause = EntityConstants.DELETED +"<>"+ EntityConstants.STATE)
 
 public abstract class BaseEntity {
+    /**
+     * içine metot tanımlamadığımız için base sınıflar abs yapıldı.
+     */
 
     /**
      * Primary Key UUID for entities
