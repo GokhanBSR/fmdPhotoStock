@@ -8,9 +8,17 @@ import java.util.UUID;
 
 public interface UserService extends UserDetailsService {
 
-    UserDto saveUser(UserDto UserDto);
+    UserDto addUser(UserDto userDto);
 
-    List<UserDto> saveAllUsers(List<UserDto> UserDtoList);
+    UserDto getUser(UserDto userDto);
+
+    void deleteUser(UserDto userDto);
+
+    UserDto updateUser(UserDto userDto);
+
+    UserDto save(UserDto UserDto);
+
+    List<UserDto> saveAll(List<UserDto> UserDtoList);
 
     List<UserDto> findAll();
 
@@ -19,8 +27,6 @@ public interface UserService extends UserDetailsService {
     UserDto findByUsername(String userName);
 
     void delete(UserDto UserDto);
-
-    void deleteById(UUID uuid);
 
     void deleteAll(List<UserDto> UserDtos);
 
@@ -35,5 +41,6 @@ public interface UserService extends UserDetailsService {
     void enableUser(UUID id);
 
     void disableUser(UUID id);
+
 
 }

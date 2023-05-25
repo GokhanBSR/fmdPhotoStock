@@ -1,31 +1,44 @@
 package com.bilgeadam.photo.controller;
 
 
-import com.bilgeadam.photo.common.controller.BaseController;
 import com.bilgeadam.photo.dto.TagDto;
+import com.bilgeadam.photo.service.TagService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
-@RequestMapping("/api/tags")
-public class TagController extends BaseController {
+public class TagController {
 
-    //...
+    private final TagService tagService;
 
-    @GetMapping("/photo/{photoId}")
-    public ResponseEntity<List<TagDto>> getByPhotoId(@PathVariable Long photoId) {
-        //içi doldurulacak null dönmeyecek
-        return null;
+    public TagController(TagService tagService) {
+        this.tagService = tagService;
     }
 
-    @GetMapping("/{name}")
-    public ResponseEntity<TagDto> getByName(@PathVariable String name) {
-        //içi doldurulacak null dönmeyecek
-        return null;
+    @PostMapping("/add-tag")
+    ResponseEntity<TagDto> addTag(@RequestBody TagDto tagDto) {
+        return new ResponseEntity<>(tagService.addTag(tagDto), HttpStatus.CREATED)
     }
+
+    @GetMapping("/get-tag")
+    ResponseEntity<TagDto> getTag(@RequestBody TagDto tagDto) {
+        return new ResponseEntity<>(tagService.getTag(tagDto), HttpStatus.OK);
+    }
+
+    @GetMapping("/update-tag")
+    ResponseEntity<TagDto> updateTag(@RequestBody TagDto tagDto) {
+        return new ResponseEntity<>(tagService.updateTag(tagDto), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete-tag")
+    void deleteTag(@RequestBody TagDto tagDto) {
+        tagService.deleteTag(tagDto);
+    }
+
+
 }

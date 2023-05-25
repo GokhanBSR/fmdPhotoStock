@@ -6,19 +6,25 @@ import com.bilgeadam.photo.dto.TagDto;
 import java.util.List;
 import java.util.UUID;
 
-public interface TagService{
+public interface TagService {
 
-    TagDto saveTag (TagDto tagDto);
+    TagDto addTag(TagDto tagDto);
 
-    List<TagDto> saveAllTags (List<TagDto> tagDtoList);
+    TagDto getTag(TagDto tagDto);
+
+    TagDto updateTag(TagDto tagDto);
+
+    TagDto deleteTag(TagDto tagDto);
+
+    List<TagDto> saveAllTags(List<TagDto> tagDtoList);
 
     List<TagDto> findAll();
 
-    TagDto findById (UUID uuid);
+    TagDto findById(UUID uuid);
 
-    List <TagDto> findByPhotoId (UUID photoId);
+    List<TagDto> findByPhotoId(UUID photoId);
 
-    void delete (TagDto tagDto);
+    void delete(TagDto tagDto);
 
     void deleteId (UUID uuid);
 

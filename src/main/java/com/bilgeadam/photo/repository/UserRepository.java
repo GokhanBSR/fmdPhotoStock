@@ -1,11 +1,9 @@
 package com.bilgeadam.photo.repository;
 
 import com.bilgeadam.photo.common.repository.BaseRepository;
-import com.bilgeadam.photo.model.Photo;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -18,7 +16,7 @@ public interface UserRepository extends BaseRepository<User, UUID> {
      * @param username
      * @return
      */
-    List<User> findByUserNameContainingIgnorCase(String username);
+    User findByUserName(String username);
 
     /**
      * @param username
@@ -28,24 +26,19 @@ public interface UserRepository extends BaseRepository<User, UUID> {
     Optional<User> findByUsernameIgnoreCase(String username);
 
     /**
-     * @param photoId
-     * @return
+     * @param userId
+     * @return user
      */
-    List<User> findByUserIdOrderByCreateDateDesc(UUID photoId);
-
-    /**
-     * finding user as category
-     */
-    List<User> findByUserIdOrderByCategoryOrPhotoId(String username, UUID photoId);
+    User findByUserId(UUID uuid);
 
     /**
      * @param email
      * @return
      */
-    List<User> findByEmailIgnoreCase(String email);
+    User findByEmailIgnoreCase(String email);
 
-    /**
-     * listing photos as date new to old
-     */
-    List<Photo> findByPhotoOrderByCreateDateDesc(UUID userId);
+//    /**
+//     * listing photos as date new to old
+//     */
+//    List<Photo> findByPhotoOrderByCreateDateDesc(UUID userId);
 }
