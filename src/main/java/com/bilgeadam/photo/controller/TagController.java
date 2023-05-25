@@ -4,14 +4,14 @@ package com.bilgeadam.photo.controller;
 import com.bilgeadam.photo.common.controller.BaseController;
 import com.bilgeadam.photo.dto.TagDto;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/api/tags")
 public class TagController extends BaseController {
 

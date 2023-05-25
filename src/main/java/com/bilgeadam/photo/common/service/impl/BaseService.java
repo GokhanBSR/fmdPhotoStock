@@ -20,7 +20,6 @@ public abstract class BaseService<
     protected final RepositoryType repository;
 
     public DtoType save(DtoType dto) {
-
         return mapper.entityToDto(repository.save(mapper.dtoToEntity(dto)));
 
     }

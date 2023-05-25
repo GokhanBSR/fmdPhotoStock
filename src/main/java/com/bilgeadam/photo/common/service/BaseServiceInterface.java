@@ -6,10 +6,9 @@ import java.util.List;
 import java.util.UUID;
 
 public interface BaseServiceInterface<DtoType extends BaseDto> {
-    DtoType save (DtoType dtoType);
-    List<DtoType> saveAll(List<DtoType> dtoType);
+    DtoType save(DtoType dtoType);
 
-    List<DtoType> saveAll (List<DtoType>dtoType);
+    List<DtoType> saveAll(List<DtoType> dtoType);
 
     List<DtoType> findAll();
 
